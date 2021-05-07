@@ -7,8 +7,18 @@ import { main } from '../google'
  */
 
 describe('google interview example - sum 8', () => {
-  test('sum 8 - 1', () => [
-    const result = main([1, 2, 3, 9], 8) 
-    expect(result).equal(false)
-  ])
+  test('sum 8 - true', () => {
+    const result = main([1, 2, 3, 7], 8) 
+    expect(result).toEqual([1, 7])
+  })
+
+  test('sum 8 - true', () => {
+    const result = main([1, 4, 4, 9], 8) 
+    expect(result).toEqual([4, 4])
+  })
+
+  test('sum 8 - false', () => {
+    const result = main([1, 3, 6, 9], 8) 
+    expect(result).toEqual([])
+  })
 })
